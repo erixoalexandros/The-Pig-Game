@@ -1,0 +1,310 @@
+/*///////////////RESET//////////////*/
+
+* {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+
+
+/*///////////////MAIN LAYOUT//////////////*/
+
+body {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    background-image: url('../img/background.jpg');
+    background-position: center;
+    background-size: cover;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 100vh;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+#wrapper {
+    -ms-flex-line-pack: center;
+    align-content: center;
+    background: rgba(255, 255, 255, 0.75);
+    -webkit-box-shadow: 0 0 72px 13px rgba(0, 0, 0, 1);
+    box-shadow: 0 0 72px 13px rgba(0, 0, 0, 1);
+    color: #FF7956;
+    display: -ms-grid;
+    display: grid;
+    font-family: 'PT Sans', sans-serif;
+    -ms-grid-rows: 100px auto;
+    -ms-grid-columns: 1fr 1fr 1fr;
+    grid-template: 100px auto / 1fr 1fr 1fr;
+    grid-template-areas: "header header header" "player-one game-controller player-two";
+    width: 60%;
+}
+
+
+
+/*//////////////////COMMONS//////////////////*/
+
+.player-heading,
+.player-score,
+.player-current,
+#new-game,
+#dice {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.btn {
+    -webkit-box-shadow: 0 3px 7px #4B4B4B;
+    box-shadow: 0 3px 7px #4B4B4B;
+    color: #fff;
+    font-size: 2.5rem;
+    font-weight: 400;
+    padding: 0.125rem 1.5rem;
+    text-align: center;
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+}
+
+.btn:hover {
+    cursor: pointer;
+}
+
+.btn:active {
+    -webkit-box-shadow: 0 3px 3px #4B4B4B;
+    box-shadow: 0 3px 3px #4B4B4B;
+}
+
+
+
+/*//////////////////HEADER///////////////////*/
+
+header {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    background-color: #ff5023;
+    color: #FFF;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    font-size: 2rem;
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 3;
+    grid-area: header;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+
+
+/*////////////PLAYER SECTIONS COMMONS//////////////*/
+
+.player-area {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-rows: 100px 1fr 200px;
+    -ms-grid-columns: auto;
+    grid-template: 100px 1fr 200px / auto;
+    grid-template-areas: "player-heading" "player-score" "player-current";
+}
+
+.player-heading {
+    border-bottom: 3px solid #474747;
+    color: #474747;
+    font-size: 2rem;
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: player-heading;
+}
+
+.active-player {
+    color: #ff3200;
+}
+
+.player-score {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    grid-area: player-score;
+}
+
+.player-current {
+    background-color: #ff3200;
+    color: #fff;
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+    grid-area: player-current;
+}
+
+.player-score h3 {
+    font-size: 3rem;
+}
+
+.player-score h2 {
+    font-size: 10rem;
+}
+
+.player-current h3 {
+    font-size: 2rem;
+}
+
+.player-current h2 {
+    font-size: 6rem;
+}
+
+.player-score-box {
+    color: #474747;
+    padding: 3rem;
+    width: 100%;
+}
+
+
+
+/*////////////PLAYER 1 SECTION//////////////*/
+
+#player-one {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    grid-area: player-one;
+}
+
+
+
+/*////////////CONTROLLER SECTION//////////////*/
+
+#game-controller {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-row: 2;
+    -ms-grid-column: 2;
+    grid-area: game-controller;
+    -ms-grid-rows: 100px 1fr 200px;
+    -ms-grid-columns: 100%;
+    grid-template: 100px 1fr 200px / 100%;
+    grid-template-areas: "new-game" "dice" "game-state";
+}
+
+#new-game {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: new-game;
+}
+
+#new-game p {
+    background-color: #474747;
+}
+
+#new-game p:hover {
+    background-color: #5686ff;
+    color: #fff;
+}
+
+#new-game p:active {
+    background-color: #234fff;
+    color: #fff;
+}
+
+#dice {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    grid-area: dice;
+}
+
+#game-state {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+    grid-area: game-state;
+    -webkit-box-pack: space-evenly;
+    -ms-flex-pack: space-evenly;
+    justify-content: space-evenly;
+}
+
+#dice img,
+.btn-controller {
+    border: 3px solid;
+}
+
+#dice img {
+    border-color: #474747;
+    display: none;
+    height: auto;
+    width: 200px;
+}
+
+.btn-controller {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 30%;
+    -webkit-box-pack: space-evenly;
+    -ms-flex-pack: space-evenly;
+    justify-content: space-evenly;
+    margin: 0 auto;
+    -webkit-transition: 0.1s;
+    transition: 0.1s;
+    width: 70%;
+}
+
+.btn-controller:hover {
+    border-radius: 10px;
+    width: 80%;
+}
+
+.btn-controller:active {
+    font-size: 2.5rem;
+    width: 75%;
+}
+
+#roll-btn {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-color: #FF5023;
+    color: #474747;
+}
+
+#roll-btn img,
+#hold-btn img {
+    height: 40px;
+}
+
+#hold-btn {
+    background-color: #ff3200;
+    border-color: #474747;
+    color: #fff;
+}
+
+
+
+/*////////////PLAYER 2 SECTION//////////////*/
+
+#player-two {
+    -ms-grid-row: 2;
+    -ms-grid-column: 3;
+    grid-area: player-two;
+}
